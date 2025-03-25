@@ -2,6 +2,8 @@
 
 Board Vault is a Python-based CLI tool to manage your board game collection, track play history, and generate game statistics.
 
+![Board Vault Stats](assets/screenshot.png)
+
 ## Prerequisites
 
 Before running the script, ensure you have the following installed:
