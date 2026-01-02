@@ -475,7 +475,11 @@ def parse_args():
         "--list-games", action="store_true", help="List all games in your collection"
     )
     parser.add_argument(
-        "--delete-game", type=str, help="Delete a game from your collection"
+        "--delete-game",
+        nargs="?",
+        const="__prompt__",
+        type=str,
+        help="Delete a game from your collection (omit value to choose from list)",
     )
     parser.add_argument(
         "--import-games",
@@ -524,7 +528,12 @@ def main():
             play_game(args.play_game, DB_NAME)
 
     if args.delete_game:
-        delete_game(args.delete_game, DB_NAME)
+        if args.delete_game == "__prompt__":
+            selected = select_game_name(DB_NAME)
+            if selected:
+                delete_game(selected, DB_NAME)
+        else:
+            delete_game(args.delete_game, DB_NAME)
 
     if args.import_games:   
         import_games(args.import_games, DB_NAME)
