@@ -49,6 +49,7 @@ python board-vault.py --stats [game|size|total|last-played]
 python board-vault.py --list-games
 python board-vault.py --add-new-game "Game Name"
 python board-vault.py --delete-game "Game Name"
+python board-vault.py --delete-game
 python board-vault.py --play-game "Game Name"
 python board-vault.py --play-game
 python board-vault.py --import-games games.csv
@@ -59,7 +60,7 @@ python board-vault.py --recommend [--recent] [--neglected]
 - `--stats` - Display statistics of games played (sortable by `game`, `size`, `total` plays, or `last-played`).
 - `--list-games` - List all games in your collection.
 - `--add-new-game` - Add a new game to the collection.
-- `--delete-game` - Remove a game from the collection (confirmation required).
+- `--delete-game` - Remove a game from the collection (confirmation required, omit the name to choose from a list).
 - `--play-game` - Log a play session for a game (omit the name to choose from a list).
 - `--import-games` - Import games and play data from a CSV file.
 - `--recommend` - Show game recommendations based on rank vs plays.
